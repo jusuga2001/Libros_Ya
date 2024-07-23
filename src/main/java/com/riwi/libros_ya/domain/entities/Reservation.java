@@ -24,9 +24,8 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Builder.Default
     @Column(nullable = false)
-    private LocalDate reservationDate = LocalDate.now();
+    private LocalDate reservationDate;
     @Column(nullable = false)
     private Boolean status;
 

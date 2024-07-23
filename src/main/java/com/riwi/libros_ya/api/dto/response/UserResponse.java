@@ -2,7 +2,6 @@ package com.riwi.libros_ya.api.dto.response;
 
 import java.util.List;
 
-import com.riwi.libros_ya.domain.entities.Reservation;
 import com.riwi.libros_ya.util.enums.Role;
 
 import lombok.AllArgsConstructor;
@@ -21,7 +20,5 @@ public class UserResponse {
     private String fullName;
     private Role role;
     private List<LoanWithBookResponse>loans;
-    private List<Reservation>reservations;
-
-
+    private List<ReservationWithBookResp>reservations;
 }

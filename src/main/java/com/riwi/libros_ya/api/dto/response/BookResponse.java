@@ -2,7 +2,6 @@ package com.riwi.libros_ya.api.dto.response;
 
 import java.util.List;
 
-import com.riwi.libros_ya.domain.entities.Reservation;
 import com.riwi.libros_ya.util.enums.Genre;
 
 import lombok.AllArgsConstructor;
@@ -22,5 +21,5 @@ public class BookResponse {
     private Genre genre;
     private String isbn;
     private LoanWithUserResponse loan;
-    private List<Reservation> reservations;
+    private List<ReservationWithUserResp> reservations;
 }
