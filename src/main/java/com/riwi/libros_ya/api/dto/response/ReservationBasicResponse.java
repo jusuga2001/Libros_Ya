@@ -1,6 +1,6 @@
 package com.riwi.libros_ya.api.dto.response;
 
-import com.riwi.libros_ya.util.enums.Genre;
+import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,11 +11,8 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-public class BookBasicResponse {
+public class ReservationBasicResponse {
     private Long id;
-    private String title;
-    private String author;
-    private int publicationYear;
-    private Genre genre;
-    private String isbn;
+    private LocalDate reservationDate;
+    private Boolean status;
 }

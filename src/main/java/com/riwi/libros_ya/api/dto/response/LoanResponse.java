@@ -1,22 +1,17 @@
 package com.riwi.libros_ya.api.dto.response;
 
-import java.time.LocalDate;
-
-
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
-@Builder
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-public class LoanResponse {
-    private Long id;
-    private LocalDate date;
-    private LocalDate returnDate;
-    private Boolean status;
+public class LoanResponse extends LoanBasicResponse{
     private UserBasicResponse user;
     private BookBasicResponse book;
 }

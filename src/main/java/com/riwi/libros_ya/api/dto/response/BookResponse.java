@@ -2,24 +2,19 @@ package com.riwi.libros_ya.api.dto.response;
 
 import java.util.List;
 
-import com.riwi.libros_ya.util.enums.Genre;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
-@Builder
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-public class BookResponse {
-    private Long id;
-    private String title;
-    private String author;
-    private int publicationYear;
-    private Genre genre;
-    private String isbn;
+public class BookResponse extends BookBasicResponse{
     private LoanWithUserResponse loan;
     private List<ReservationWithUserResp> reservations;
 }

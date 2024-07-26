@@ -1,24 +1,18 @@
 package com.riwi.libros_ya.api.dto.response;
 
 import java.util.List;
-
-import com.riwi.libros_ya.util.enums.Role;
-
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
-@Builder
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserResponse {
-    private Long id;
-    private String username;
-    private String email;
-    private String fullName;
-    private Role role;
+public class UserResponse extends UserBasicResponse{
     private List<LoanWithBookResponse>loans;
     private List<ReservationWithBookResp>reservations;
 }

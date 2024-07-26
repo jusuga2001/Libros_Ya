@@ -6,8 +6,10 @@ import org.springframework.stereotype.Service;
 
 import com.riwi.libros_ya.api.dto.request.BookRequest;
 import com.riwi.libros_ya.api.dto.response.BookResponse;
+import com.riwi.libros_ya.domain.entities.Book;
 import com.riwi.libros_ya.domain.repositories.BookRepository;
 import com.riwi.libros_ya.infrastructure.abstract_services.IBookService;
+import com.riwi.libros_ya.mapper.BookMapper;
 
 import lombok.AllArgsConstructor;
 
@@ -17,11 +19,13 @@ public class BookService implements IBookService {
 
     @Autowired
     private final BookRepository bookRepository;
+    @Autowired
+    private final BookMapper bookMapper;
 
     @Override
     public BookResponse create(BookRequest request) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'create'");
+        Book book = this.bookMapper.requestToEntity(request);
+        return this.bookMapper.EntityToResponse(this.bookRepository.save(book));
     }
 
     @Override
